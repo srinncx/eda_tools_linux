@@ -62,4 +62,26 @@ sudo make
 sudo make install
 cd ..
 
+#######################################################
+#STEP:5 Installing yosys
+########################################################
+
+cd ~/eda_tools/ 
+git clone --recurse-submodules https://github.com/YosysHQ/yosys.git
+sudo apt-get install gawk git make python3 lld bison clang flex libffi-dev libfl-dev libreadline-dev pkg-config tcl-dev zlib1g-dev graphviz xdot
+curl -LsSf https://astral.sh/uv/install.sh | sh
+cd yosys 
+make 
+sudo make install 
+cd ..
+
+#######################################################
+#STEP:6 Installing atalanta
+########################################################
+
+cd ~/eda_tools/ 
+git clone https://github.com/hsluoyz/Atalanta.git
+cd Atalanta 
+make 
+cd ..
 
