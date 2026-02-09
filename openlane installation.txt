@@ -1,0 +1,20 @@
+openlane installation process
+
+
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y docker.io
+sudo systemctl enable docker
+sudo systemctl start docker
+docker --version
+sudo usermod -aG docker $USER
+newgrp docker
+docker run hello-world
+sudo apt install -y git make
+git clone https://github.com/The-OpenROAD-Project/OpenLane.git
+cd OpenLane
+make
+
+xhost +local:docker
+cd ~/OpenLane
+ make mount
+
